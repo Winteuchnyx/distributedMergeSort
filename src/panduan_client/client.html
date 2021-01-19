@@ -1,0 +1,512 @@
+<html>
+    <head>
+        <style>
+            p{
+                text-align : justify;
+            }
+            img{
+
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>
+                Aplikasi Modul Client merupakan inti implementasi dari sistem, pada aplikasi sisi client ini seluruh proses berasal, dikendalikan dan diterima.
+                Menu yang dapat dinavigasikan oleh pengguna adalah tombol bantuan (6), combo box jenis algoritma (8), combo box jenis pengurutan (9), tombol pilih algoritma (10),
+                tombol konfigurasi server (13), tombol pindai server (14), kolom teks jumlah prosesor client (17), tombol set jumlah prosesor (18), 
+                tombol memilih input file acak (20), kolom teks jumlah potongan satu siklus pengiriman array ke server (25), tombol set jumlah potongan array (26),
+                kolom teks jumlah perulangan proses / stress test / running test (29), tombol set jumlah stress test / running test (30),
+                tombol mengunci konfigurasi dan menyiapkan modul server (31), radio button "no log" (33), radio button "normal log" (34), radio button "debug log" (35),
+                cek box "auto save log"(36), tombol memulai (37), tombol membuka file statistik proses pada sesi saat ini (46), tombol memilih dan menampilkan file hasil pengurutan (47),
+                tombol membuka file rekaman "auto save log" (48), tombol mengulang proses (49), kolom teks jumlah bilangan acak (52), kolom teks variasi / jangkauan satuan bilangan acak (54),
+                kolom teks nama file hasil pembangkitan bilangan acak yang ingin disimpan pada direktori drive (56), tombol memulai proses pembangkitan file bilangan acak (57).
+            </p>
+            <center>
+                <img src="tampilan_client.png" alt="tampilan utama client">
+            </center>
+            <p>Petunjuk : </p>
+            <ol>
+                	<li>Label untuk teks baris status konfigurasi algoritma.</li>
+	                <li>Label untuk teks konfigurasi algoritma terpilih.</li>
+	                <li>TextField untuk menampilkan status konfigurasi algoritma terpilih, bersifat read only.</li>
+	                <li>Label untuk teks konfigurasi pengurutan algoritma terpilih.</li>
+	                <li>TextField untuk menampilkan status konfigurasi pengurutan algoritma terpilih, bersifat read only.</li>
+	                <li>Button untuk menampilkan halaman bantuan.</li>
+	                <li>Label untuk teks pengaturan konfigurasi algoritma.</li>
+	                <li>ComboBox untuk pemilihan jenis komputasi algoritma merge sort.</li>
+	                <li>ComboBox untuk pemilihan jenis pengurutan menaik atau menurun.</li>
+	                <li>Button untuk menyimpan konfigurasi algoritma.</li>
+	                <li>Label untuk teks baris jumlah server terdeteksi yang tersimpan dalam memori aplikasi.</li>
+	                <li>TextField untuk menampilkan jumlah server tersimpan dalam memori aplikasi, bersifat read only.</li>
+	                <li>Button untuk menampilkan dialog konfigurasi server yang terdeteksi.</li>
+	                <li>Button untuk memindai ulang server dalam LAN.</li>
+	                <li>Label untuk teks baris jumlah konfigurasi prosesor client tersimpan.</li>
+	                <li>TextField untuk menampilkan jumlah konfigurasi prosesor client tersimpan, bersifat read only.</li>
+	                <li>TextField untuk mengisi konfigurasi jumlah prosesor client oleh pengguna.</li>
+	                <li>Button untuk menyimpan konfigurasi jumlah prosesor client berdasarkan isi textfield sebaris.</li>
+	                <li>Label untuk teks baris konfigurasi file yang ingin diurutkan.</li>
+	                <li>Button untuk memilih file – file untuk diurutkan.</li>
+	                <li>Label untuk teks baris jumlah file terpilih yang terdeteksi aplikasi.</li>
+	                <li>TextField untuk menampilkan jumlah file terpilih yang dideteksi aplikasi setelah dipilih oleh pengguna, bersifat read only.</li>
+	                <li>Label untuk teks baris jumlah potongan array terkirim ke server.</li>
+	                <li>TextField untuk menampilkan jumlah potongan array terkirim ke server, bersifat read only.</li>
+	                <li>TextField untuk mengisi konfigurasi jumlah potongan array terkirim ke server oleh pengguna.</li>
+	                <li>Button untuk menyimpan konfigurasi chunkSize (potongan array) berdasarkan isi textfield sebaris.</li>
+	                <li>Label untuk menampilkan teks baris jumlah perulangan stress test.</li>
+	                <li>TextField untuk menampilkan konfigurasi jumlah perulangan stress test, bersifat read only.</li>
+	                <li>TextField untuk mengisi konfigurasi jumlah perulangan stress test oleh pengguna.</li>
+	                <li>Button untuk menyimpan konfigurasi jumlah perulangan stress test berdasarkan isi textfield sebaris.</li>
+	                <li>Button untuk menyiapkan sumber daya server.</li>
+	                <li>Label untuk teks baris konfigurasi riwayat proses.</li>
+	                <li>RadioButton no log, sebagai pilihan konfigurasi bagi pengguna untuk tidak melacak riwayat proses.</li>
+	                <li>RadioButton normal log, sebagai pilihan konfigurasi bagi pengguna untuk melacak riwayat proses.</li>
+	                <li>RadioButton debug log, sebagai pilihan konfigurasi bagi pengguna untuk melacak riwayat proses bersama dengan data bilangan yang diproses.</li>
+	                <li>CheckBox untuk menyimpan riwayat proses kedalam bentuk file berdasarkan radiobutton terpilih.</li>
+	                <li>Button untuk memulai proses algoritma yang terpilih.</li>
+	                <li>Label untuk teks baris jumlah array dari file yang terproses.</li>
+	                <li>TextField untuk menampilkan jumlah array dari file yang sedang diproses, bersifat read only.</li>
+	                <li>Label untuk teks baris jumlah antrian perulangan stress test yang sudah terproses.</li>
+	                <li>TextField untuk menampilkan jumlah antrian perulangan stress test yang sudah terproses, bersifat read only.</li>
+	                <li>Label untuk status informasi proses berjalan yang tersinkronisasi sesuai dengan progressBar.</li>
+	                <li>ProgressBar sebagai informasi perkembangan jalannya proses yang sedang berjalan.</li>
+	                <li>TextArea untuk memunculkan riwayat proses sistem sesuai konfigurasi radioButton terpilih.</li>
+	                <li>Label untuk teks hasil proses sistem</li>
+	                <li>Button untuk membuka data berisi waktu proses masing – masing file menggunakan text editor bawaan sistem operasi.</li>
+	                <li>Button untuk memilih file hasil pengurutan proses sistem untuk ditampilkan menggunakan text editor bawaan sistem operasi.</li>
+	                <li>Button untuk menampilkan file riwayat proses yang tersimpan sesuai konfigurasi radioButton yang terpilih.</li>
+	                <li>Button untuk memulai ulang proses.</li>
+	                <li>Label untuk teks baris pembangkit file acak untuk diurutkan.</li>
+	                <li>Label untuk teks baris jumlah ukuran array file.</li>
+	                <li>TextField untuk mengisi konfigurasi jumlah ukuran array file untuk pengguna.</li>
+	                <li>Label untuk teks baris variasi angka acak tunggal dalam array yang dibangkitkan.</li>
+	                <li>TextField isian bagi pengguna untuk menentukan variasi acak pada angka tunggal dalam array yang dibangkitkan.</li>
+	                <li>Label untuk teks baris nama file hasil pembangkitan angka acak yang ingin disimpan dalam drive.</li>
+	                <li>TextField untuk mengisi nama file hasil pembangkitan angka acak yang ingin disimpan dalam drive.</li>
+	                <li>Button untuk memulai proses pembangkitan file berisi angka acak.</li>
+            </ol>
+            <center>
+                <img src="navigasi.png" alt="navigasi"/>
+            </center>
+            <p>
+                Aplikasi Modul Client terdiri dari dua bagian aplikasi , yaitu sistem terdistribusi yang mengimplementasi algoritma merge sort dan 
+                aplikasi pembangkitan file bilangan acak. Maka pembahasan awal navigasi akan dibagi berdasarkan aplikasi lalu membahas lebih dalam 
+                fitur dan cara navigasi dari kedua aplikasi tersebut sesuai tanda merah pada gambar diatas.
+            </p>
+            <ul>
+                <div>
+                    <center>
+                        <img src="random_generator.PNG" alt="generator"/>
+                    </center>
+                    <li>
+                        <p>
+                            Aplikasi pembangkitan file bilangan acak berfungsi sebagai penghasil input untuk aplikasi client sistem terdistribusi, maka dari itu aplikasi
+                        ini dibuat menjadi satu tampilan pada aplikasi client. Inti dari isi file bilangan acak adalah jumlah atau besar bilangan dan variasi acak yang diperbolehkan.
+                        Sebagai contoh berdasarkan gambar diatas, jumlah bilangan yang dibangkitkan adalah 10, sementara variasi acak yang diperbolehkan adalah 2. berarti dalam file hanya
+                        boleh berisi angka (0-2) sebanyak 10 kali. Adapun nama file digunakan untuk penyimpanan dan mereferensikan file pada direktori folder "Generated Input File" sistem agar dapat diakses oleh aplikasi
+                        yabg juga merupakan direktori bawaan yang terbuka saat pemilihan file input pada sistem. Sebagai contoh gambar diatas akan menghasilkan file seperti gambar dibawah ini.
+                        </p>
+                    </li>
+                    <center>
+                        <img src="random_file.PNG" alt="random file"/>
+                    </center>                    
+                </div>
+                <div>
+                    <br/><br/>
+                    <center>
+                        <img src="dasar.PNG" alt="tampilan dasar"/>
+                    </center>
+                    <li>
+                        <p>
+                            Gambar diatas adalah tampilan dasar dari aplikasi client dalam sistem terdistribusi, Terdapat 5 bagian tampilan (panel) dengan 4 bagian yang dapat
+                            dinavigasikan oleh pengguna. 4 bagian tampilan lainnya hanya akan muncul secara sekuential setelah tahap - tahap inisialisasi yang dibutuhkan telah dikonfigurasi dengan benar
+                            .Berikut adalah pembahasan dari 4 bagian tampilan yang dapat dinavigasikan pengguna.
+                        </p>                                
+                    </li>
+                    <ol type="A">
+                        <div>
+                            <center>
+                                <img src="pilih algoritma.PNG" alt="pilih algoritma"/>
+                            </center>
+                            <li>
+                                <p>
+                                Dalam aplikasi algoritma yang dipakai adalah satu yaitu merge sort, tetapi proses komputasinya berbeda. Selain itu dalam pengurutan juga terdapat dua jenis tipe penyusunan yakni :
+                                pengurutan menaik / ascending (dari kecil ke besar) dan pengurutan menurun / descending (dari besar ke kecil). Karena parameter yang dibutuhkan setiap komputasi algoritma merge sort berbeda 
+                                maka pembahasan navigasi selanjutnya akan disesuaikan untuk tiga variasi inisialisasi paramater dan proses berdasarkan konteks jenis komputasi yang dipilih. Gambar diatas merupakan tampilan
+                                bawaan saat aplikasi pertama sekali dibuka dengan algortima terpilih adalah Distributed Merge Sort dan jenis pengurutan menaik (ASC). Adapun tombol "pilih" berfungsi untuk menetapkan algoritma 
+                                dan menampilkan bagian tampilan (panel) inisialisasi parameter yang akan dibahas pada point navigasi selanjutnya.
+                                </p>                                    
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <p>
+                                    Panel kedua dalam aplikasi client dalam sistem terdistribusi yang diimplementasi memiliki variasi berdasarkan jenis komputasi algoritma merge sort yang dipilih oleh panel pertama,
+                                    tujuan variasi ini untuk mencegah kebingungan pengguna pada parameter yang  tidak terpakai pada jenis komputasi algoritma yang terpilih. Pembahasan dibawah ini akan menjelaskan ketiga variasi
+                                    tampilan parameter inisialisasi.
+                                </p>                                    
+                            </li>
+                            <center>
+                                <img src="inisialisasi sequential merge sort.png" alt="sequential merge sort" style="width : 100%"/>
+                            </center>
+                            <p>
+                                Gambar diatas adalah variasi pertama dari pemilihan jenis komputasi algoritma merge sort, pada "Seqential Merge Sort" tidak memerlukan parameter khusus apapun.
+                                Hanya memerlukan file yang diurutkan saja. Sementara menus isian "jumlah ulang/running test" adalah untuk menguji konsistensi waktu proses saja dengan mengulang proses sebesar inputan pengguna atau 
+                                dengan nilai bawaan 10. Kedua parameter ini dimiliki oleh seluruh jenis komputasi algoritma merge sort lainnya. Adapun parameter "Input File Berisi Angka Acak" merupakan satu-satunya parameter inisialisasi
+                                yang tidak memiliki nilai bawaan dan harus ditentukan pengguna pada setiap sesi aplikasi.
+                            </p>
+                            <center>
+                                <img src="inisialisasi parallel merge sort.png" alt="parallel merge sort" style="width : 100%"/>
+                            </center>
+                            <p>
+                                Gambar diatas adalah variasi kedua dari pemilihan jenis komputasi algoritma merge sort, pada konfigurasi "Parallel Merge Sort" memerlukan satu parameter khusus yaitu jumlah prosesor 
+                                yang dipakai pada komputasi parallel, dikarenakan konsepnya sama seperti menjalankan proses lokal pada sumber daya komputer asal maka memakai penamaan "Core Client" yang berarti 
+                                jumlah prosesor yang digunakan oleh komputer tempat aplikasi client berjalan saat ini. Sama seperti konfigurasi "Sequential Merge Sort", parameter "Jumlah Ulang/Running Test" sudah memiliki 
+                                nilai bawaan 10 dan parameter "Input File Berisi Angka Acak" merupakan satu-satunya parameter yang tidak memiliki bawaan, namun konfigurasi "Parallel Merge Sort" memiliki nilai bawaan 2 atau 
+                                nilai lainnya berdasarkan inputan user apabila melakukan pengisian pada dialog "First Hidden Utility" pada halaman / modul utama sebelum memulai aplikasi client.
+                             </p>
+                            <center>
+                                <img src="inisialisasi distributed merge sort.png" alt="distributed merge sort" style="width : 100%"/>
+                            </center>
+                            <p>
+                                Gambar diatas adalah variasi ketiga dari pemilihan jenis komputasi algoritma merge sort, pada konfigurasi "Distributed Merge Sort" memiliki beberapa konfigurasi parameter tambahan, yaitu :
+                                jumlah "Server Terdeteksi", konfigurasi prosesor server - server terdeteksi dan jumlah potongan array / "Chunk Size". Dapat dilihat bahwa parameter dari ketiga konfigurasi bersifat increment
+                                atau penambahan dari konfigurasi sebelumnya. Hal ini dikarenakan konsep komputasinya memiliki kesinambungan, diagram berikut menunjukkan hubungan tersebut.
+                            </p>
+                            <center>
+                                <img src="konsep distributed merge sort.png" alt="konsep"/>
+                            </center>
+                            <p>
+                                Dikarenakan pada konfigurasi "Distributed Merge Sort" terdapat proses yang berjalan di host lain, maka penting untuk mengetahui alamat IP tujuan dimana tugas yang sudah dibagi harus dikirim. 
+                                Berdasarkan gambar diatas diketahui konsep distributed merge sort adalah parallel merge sort yang berjalan bersamaan pada banyak host maka diperlukan dua konfigurasi jumlah prosesor yang dipakai, 
+                                yaitu pada sisi server dan sisi client. Untuk mengkonfigurasikan prosesor server - server yang jumlahnya banyak, diperlukan tampilan yang mampu menampung data banyak. Berikut adalah kotak dialog 
+                                yang akan muncul ketika menekan tombol "TAMPILKAN & SET SERVER" sesuai tanda kotak merah pada gambar.
+                            </p>
+                            <center>
+                                <img src="konfigurasi server.png" style="width : 100%" alt="konfigurasi server"/>
+                            </center>
+                            <p>
+                                Berikut adalah petunjuk detail dari kotak dialog konfigurasi server :
+                            </p>
+                            <center>
+                                <img src="daftar_server_terkoneksi_dan_konfigurasi_core_masingmasing_server.png" alt="kotak dialog konfigurasi server"/>
+                            </center>
+                            <p>Petunjuk : </p>
+                            <ol>
+                                <li>Label untuk menampikan teks judul dialog konfigurasi.</li>
+                                <li>ComboBox untuk memilih IP server tersimpan yang ingin dikonfigurasi secara tunggal.</li>
+                                <li>Label untuk menampilkan teks konfigurasi prosesor server terpilih saat ini.</li>
+                                <li>TextField untuk menampilkan konfigurasi prosesor server saat ini berdasarkan pilihan comboBox, bersifat read only.</li>
+                                <li>Label untuk menampilkan teks konfigurasi mengganti jumlah prosesor server.</li>
+                                <li>TextField isian bagi pengguna untuk mengganti jumlah prosesor server.</li>
+                                <li>Table untuk menampilkan data IP server – server yang terdeteksi dengan konfigurasi prosesor masing-masing server.</li>
+                                <li>Button untuk menyimpan konfigurasi host tunggal prosesor server.</li>
+                                <li>Button untuk menyimpan konfigurasi prosesor server berdasarkan isian jumlah prosesor serentak ke seluruh server.</li>
+                                <li>Button untuk menyegarkan tabel server – server yang terdeteksi.</li>
+                                <li>Button untuk menutup dialog konfigurasi.</li>
+                            </ol>
+                            <p>
+                                Adapun untuk konfigurasi pada aplikasi client (lokal) dikonfigurasi pada menu awal sama seperti konfigurasi "Parallel Merge Sort", sementara tombol scan digunakan untuk memindai ulang
+                                host server tanpa perlu menampilkan detail alamat host server seperti yang tombol "TAMPILKAN & SET SERVER" jalankan. Parameter khusus lainnya adalah "Chunk Size", konsep chunk size 
+                                pada java RMI dianggap "deprecated" saat pengembangan dan nilai bawaannya diganti menjadi 0 (menandakan otomatis penyesuaian), tujuan chunk size adalah mengurangi beban bandwidth dengan mengirim
+                                potongan data yang ingin diproses lebih kecil daripada pengiriman sekaligus dalam jumlah besar. Namun pada java RMI pemanggilan berlebihan akan menyebabkan memory leakage dan menurunkan performa aplikasi
+                                yang disebabkan fitur java RMI yang mensikronisasi objek pada host berbeda. Karena hal ini konsep chunk size digeser menjadi "memotong data yang dikirim ketika host tujuan tidak memiliki cukup memory",
+                                yang mana pada fitur otomatis, sistem akan otomatis menyesuaikan thresshold memori yang mampu diterima host tujuan dalam satu kali pengiriman, hal ini mengakibatkan ketidak seimbangan proses / ketidakadilan proses 
+                                pada setiap pembagian jumlah pengiriman array distributed merge sort. Maka dari itu tetap tersedia kolom untuk mengganti nilai chunkSize yang sifatnya akan adil kepada seluruh proses pembagian array yang dijalankan oleh sistem (
+                                    bersifat sukses atau gagal, dengan menunggu keputusan user untuk membatalkan atau mencoba kembali. Tanpa sistem melakukan negosiasi memori.
+                                ). Sama Seperti konfigurasi "Parallel Merge Sort", semua parameter memiliki nilai bawaan (client core, server terdeteksi, Chunk Size, Jumlah Ulang / Running Test) kecuali parameter "Input File berisi angka acak".
+                            </p>
+                            <cite>
+                                Catatan : Apabila pengguna lupa memilih file input yang ingin diurutkan maka ketika menekan tombol "Ready" akan muncul error seperti gambar berikut.
+                            </cite>
+                            <center>
+                                <img src="lupa.png" alt="lupa"/>
+                            </center>
+                            <p>
+                                Untuk memilih file pengguna dapat memilih satu saja atau lebih (dengan menekan shift , ctrl atau drag mouse) pada jendela dialog pemilihan file yang muncul, 
+                                nantinya text field pada panel akan berubah dari kosong menjadi jumlah file yang terpilih. Gambar berikut mendemonstrasikan pemilihan file berjumlah banyak.
+                            </p>
+                            <center>
+                                <img src="pilih banyak file.png" style = "width : 100%" alt="pilih banyak file"/>
+                            </center>
+                            <p>
+                                Untuk konfigurasi seperti "Jumlah ulang / Running Test", nilai pengguna hanya akan valid berubah apabila sudah tersimpan di sistem dengan menekan tombol "SET RUN".
+                                Lalu textfield readonly disebelah kiri kotak isian akan berubah menjadi nilai yang dikonfigurasi pengguna. Seperti yang ditunjukkan gambar berikut. 
+                            </p>
+                            <center>
+                                <img src="set running test.png" style="width: 100%;" alt="set running test"/>
+                            </center>
+                            <cite>
+                                Catatan : nilai Jumlah ulang tidak boleh lewat dari 1 - 100, apabila ingin bypass harus double klik textfield readonly untuk bypass pengamananan konfigurasi (amat tidak disarankan
+                                karena akan menyebabkan memory leaks dan overcrowded process kecuali anda paham cara kerjanya !!).
+                            </cite>
+                            <p>
+                                Untuk konfigurasi seperti "Core Client", cara konfigurasi sama seperti "Jumlah ulang / Running Test", nilai pengguna hanya akan valid berubah jika sudah tersimpan 
+                                pada sistem yang ditandai dengan perubahan textfield readonly disisi kiri isian. Seperti yang ditunjukkan gambar berikut.
+                            </p>
+                            <center>
+                                <img src="set core client.png" style="width: 100%;" alt="set core client"/>
+                            </center>
+                            <cite>
+                                Catatan : nilai core client tidak boleh melebihi 255, apabila ingin bypass harus double klik textfield readonly untuk bypass konfigurasi (amat tidak disarankan kecuali anda paham cara kerjanya!!).
+                            </cite>
+                            <p>
+                                Untuk konfigurasi "Chunk Size", cara konfigurasi sama seperti "Core Client", hanya saja tampilan penyimpanan data yang berbeda. Nilai yang diinput pengguna merupakan jumlah array yang dikirim dalam sekali proses,
+                                bukan jumlah data yang dikirim dalam sekali proses. Maka perhitungan yang ditampilkan adalah jumlah data dengan rumus : &lt;Input pengguna&gt; * 4 / 1000000( satuan MB). Gambar berikut menunjukkan konfigurasi "Chunk Size".
+                            </p>
+                            <center>
+                                <img src="set chunk size.png" style="width: 100%;" alt="set chunk size"/>
+                            </center>
+                            <cite>
+                                Catatan : nilai chunk size dibatasi 250 (1 KB), apabila ingin bypass harus double klik textfield readonly. (amat tidak disarankan, ingat!!! nilai terlalu tinggi akan menyebabkan kegagalan pengiriman apabila
+                                memory host server tujuan tidak cukup, nilai terlalu rendah akan menyebabkan memory leak pada java RMI.)
+                            </cite>
+                        </div>
+                        <div>                                
+                            <li>
+                                <p>
+                                    Panel ketiga adalah tampilan persiapan untuk memulai proses komputasi algoritma merge yang dipilih. Selain itu, terdapat tiga kategori menampilkan riwayat proses yang berjalan pada text area. Karena terdapat tiga variasi 
+                                komputasi algoritma merge sort yang diimplementasi aplikasi, maka terdapat tiga variasi riwayat proses pada konfigurasi "normal log" dan "debug log" yang akan dibahas dibawah ini.
+                                </p>                                
+                            </li>
+                            <ul>
+                                <div>
+                                    <li>
+                                        <p>
+                                            "No Log" adalah pilihan riwayat log yang bertujuan digunakan saat proses pengujian penelitian, sebab tidak menampilkan apapun melalui I/O maka tidak akan mempengaruhi waktu komputasi dan jalannya proses akibat 
+                                            harus menunggu selesai proses I/O yang lama.
+                                        </p>
+                                    </li>                              
+                                </div>
+                                <div>
+                                    <li>
+                                        <p>
+                                            "Normal Log" adalah pilihan riwayat log sederhana yang menampilkan titik proses yang akan dimasuki oleh aplikasi. Terdapat tiga variasi pada riwayat jenis ini,
+                                            berikut adalah gambar ketiga variasi tersebut (sequential merge sort, parallel merge sort, distributed merge sort).
+                                        </p>
+                                    </li>
+                                    <center>
+                                        <div>
+                                            <img src="normal log sequential merge sort.png" style="width : 100%" alt="normal log sequential merge sort"/>
+                                            <p style="text-align: center;">normal log sequential merge sort</p>
+                                        </div>
+                                        <div>
+                                            <img src="normal log parallel merge sort.png" style="width : 100%" alt="normal log parallel merge sort"/>
+                                            <p style="text-align: center;">normal log parallel merge sort</p>
+                                        </div>
+                                        <div>
+                                            <img src="distributed merge sort normal log.png" style="width : 100%" alt="normal log distributed merge sort"/>
+                                            <p style="text-align: center;">normal log distributed merge sort</p>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div>
+                                    <li>
+                                        <p>
+                                            "Debug Log" adalah pilihan riwayat log yang menampilkan data angka dari array yang diproses sebagai tambahan dari menampilkan titik proses yang 
+                                            dimasuki oleh aplikasi (seperti "normal log"). Terdapat tiga variasi pada jenis riwayat ini, berikut adalah gambar ketiga variasi tersebut pada konfigurasi
+                                            algoritma sequential merge sort, parallel merge sort dan distributed merge sort.
+                                        </p>
+                                    </li>
+                                    <center>
+                                        <div>
+                                            <img src="debug log sequential merge sort.png" style="width : 100%" alt="debug log sequential merge sort"/>
+                                            <p style="text-align: center;">debug log sequential merge sort</p>
+                                        </div>
+                                        <div>
+                                            <img src="debug log parallel merge sort.png" style="width : 100%" alt="debug log parallel merge sort"/>
+                                            <p style="text-align: center;">debug log parallel merge sort</p>
+                                        </div>
+                                        <div>
+                                            <img src="distributed merge sort debug log.png" style="width : 100%" alt="debug log distributed merge sort"/>
+                                            <p style="text-align: center;">debug log distributed merge sort</p>
+                                        </div>
+                                    </center>                          
+                                </div>                                        
+                            </ul>
+                            <p>
+                                Pada Distributed Merge Sort pada suatu ketika mungkin terjadi error koneksi jaringan terputus ataupun server tidak memiliki memori yang cukup untuk menjalankan proses dalam satu kali pengiriman.
+                                Dalam pengembangan aplikasi penulis memberikan pilihan bagi pengguna untuk menanggani masalah secara manual dengan memberikan kotak dialog khusus. pada masing - masing error.
+                                Berikut adalah penjelasan gangguan yang mungkin dapat terjadi ketika proses "Distributed Merge Sort".
+                            </p>
+                            <ul>
+                                <center>
+                                    <img src="error 1.PNG" alt="error 1"/>
+                                </center>
+                                <li>
+                                    <p>
+                                        Error host server tidak tersedia di awal proses ketika sistem mencoba menghubungi host pertama sekali. Error ini adalah error yang sering dan mudah ditemui,
+                                        yakni ketika menekan tombol proses dan sistem mencoba menghubungi satu - persatu modul server tidak mendapat balasan selama tiga kali berturut - turut setelah menunggu masing - masing 10 detik.
+                                        Solusi dari error ini adalah memeriksa kembali koneksi jaringan host atau membatalkan proses dan melakukan pindai ulang (dengan menekan tombol "SCAN") host pada LAN kemudian memulai proses kembali.
+                                        Gambar diatas adalah contoh dari error ini.
+                                    </p>
+                                </li>
+                                <center>
+                                    <img src="error 2.PNG" alt="error 2"/>
+                                </center>
+                                <li>
+                                    <p>
+                                        Error saat proses sedang berlangsung dan bersifat tidak dapat dipulihkan kembali yang memaksa pengguna harus memulai proses dari awal, error ini
+                                        memiliki tiga variasi yakni : "timeout", "koneksi tidak tersedia" dan "error tidak terduga" dengam masing - masing memiliki pesan error sistem yang berbeda - beda sesuai konteks.
+                                        Solusi untuk error ini sangat tergantung konteks dan berbeda - beda solusinya dapat dicari diinternet, biasanya error ini solusi umumnya adalah memeriksa hardware jaringan 
+                                        masing - masing host tidak konslet dan memulai proses dari awal kembali. Gambar diatas merupakan contoh error timeout dari error jenis ini.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Error saat proses pemotongan array (chunking array), error ini bersifat dapat dipulihkan tergantung keputusan oleh pengguna. Error ini dibagi menjadi dua jenis yaitu error
+                                        automatic chunk dan error user defined chunk. Perbedaannya adalah error user defined chunk bersifat statis, sementara pada error user defined chunk bersifat dinamis yang nilainya
+                                        diubah berdasarkan kemampuan host server. Berikut adalah pembahasan kedua jenis error ini.
+                                    </p>
+                                </li>
+                                <ol>
+                                    <div>
+                                        <center>
+                                            <img src="error 3.PNG" alt="user defined chunk error"/>
+                                        </center>
+                                        <li>
+                                            <p>
+                                                Gambar diatas adalah error user defined chunk, dimana apabila terdapat error "java.lang.out of memory" yang mengindikasikan
+                                                host server tujuan tidak mampu menerima array dengan jumlah sebesar yang didefinisikan oleh pengguna pada parameter "Chunk Size", maka sistem tidak akan melakukan penyesuaian dan akan terus menampilkan error ini
+                                                sampai pengguna secara manual memberi perintah batalkan proses untuk memulai ulang, karena error ini menunggu input pengguna, hal ini mengakibatkan waktu proses menjadi lebih lama dan tidak konsisten.
+                                            </p>
+                                        </li>
+                                    </div>
+                                    <div>
+                                        <center>
+                                            <img src="error 4.PNG" alt="automatic chunk error"/>
+                                        </center>
+                                        <li>
+                                            <p>
+                                                Automatic chunked error adalah error yang mirip dengan user defined error hanya saja error ini hanya akan muncul ketika sistem tidak mampu
+                                                menyelesaikan masalah pembagian array  misalnya koneksi terputus, RMIregistry hang atau sudah tidak aktif dan error lainnya.Sama seperti user defined chunk
+                                                sistem akan memberikan kotak dialog berisi detail error yang perlu ditangani sesuai konteks yang sifatnya berbeda-beda / tidak ada solusi pasti. Gambar diatas adalah
+                                                contoh error ini ketika koneksi internet terputus saat automatic chunk berlangsung, error ini bersifat recoverable tapi mengakibatkan waktu proses menjadi lebih lama.
+                                            </p>
+                                        </li>
+                                    </div>
+                                    <div>
+                                        <center>
+                                            <img src="outofmemory distributed merge sort.PNG" alt="out of memory distributed merge sort">
+                                        </center>
+                                        <li>
+                                            <p>
+                                                Out Of Memory Error Client dan Server (Distributed Merge Sort Only) adalah error yang hanya muncul pada konfigurasi "Distributed Merge Sort", error 
+                                                ini terjadi apabila client tidak memiliki cukup memori untuk menampung data hasil pengurutan dari server atau client tidak memiliki cukup memori untuk menyimpan 
+                                                buffer server ketika server tidak memiliki memori yang cukup dan mengirim permintaan pada client untuk melakukan pemotongan data yang dikirim (Chunking Array) 
+                                                agar server dapat memproses file yang dibagikan (kasus chunking array otomatis hanya ada pada konfigurasi chunkSize = 0 (automatic)). Solusi dari error ini adalah mencari
+                                                komputer client yang memiliki memori RAM yang lebih besar untuk memproses data yang diinputkan, apabila memori RAM client sudah cukup besar dan masih mendapat error ini maka 
+                                                tambah jumlah host server (komputer) yang terkoneksi pada sistem.
+                                            </p>
+                                        </li>
+                                    </div>
+                                    <div>
+                                        <center>
+                                            <img src="outofmemory merge sort.PNG" alt="out of memory general"/>
+                                        </center>
+                                        <li>
+                                            <p>
+                                                Out of Memory Error General adalah error yang menandakan bahwa komputer / host yang menjadi client saat ini tidak memiliki memori RAM yang cukup untuk
+                                                memproses data dengan jumlah yang dimiliki oleh file yang tertera pada error. Solusi untuk error ini adalah menambah RAM komputer agar dapat mengakomodasi 
+                                                data yang diproses.
+                                            </p>
+                                        </li>
+                                    </div>
+                                </ol>
+                            </ul>
+                        </div>
+                        <div>
+                            <li>
+                                <p>
+                                    Panel keempat merupakan panel hasil, panel ini berisi empat tombol navigasi yakni menampilkan statistik waktu, menampilkan file hasil pengurutan, menampilkan
+                                    file rekaman riwayat log yang tersimpan dan mengulang proses. Terdapat tiga tombol yang memiliki fungsi I/O dalam direktori file sistem yang memerlukan teks editor 
+                                    bawaan OS(Sistem Operasi) untuk dapat berjalan dengan lancar. Berikut adalah pembahasan tiga fungsi tombol hasil proses.
+                                </p>
+                            </li>
+                            <ol>
+                                <div>
+                                    <center>
+                                        <img src="statistik.png" alt="tampilkan statistik" style = "width : 100%"/>
+                                    </center>
+                                    <li>
+                                        <p>
+                                            Tombol "Buka Stat" mencari file pada folder Statistik Log dengan nama file "Log &lt;konfigurasi algorimtma&gt;(&lt;parameter&gt;)", dimana apabila terdapat nama file yang sama
+                                            akan ditampilkan file dengan nilai increment tertinggi ("Log &lt;konfigurasi algorimtma&gt;(&lt;parameter&gt;)(&lt;increment&gt;)"). File yang terpilih kemudian akan ditampilkan 
+                                            melalui teks editor bawaan yang dipilih oleh sistem operasi pengguna. isi dari file adalah waktu proses terhadap masing - masing file sejumlah parameter running test. Gambar diatas adalah contoh dari pembukaan file statistik ketika pengguna menekan tombol ini.
+                                        </p>
+                                    </li>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="outputfile.png" alt="tampilkan hasil output" style = "width : 100%"/>
+                                    </center>
+                                    <li>
+                                        <p>
+                                            Tombol "Buka Hasil Sort" berfungsi menampilkan file hasil pengurutan, pengguna harus memilih terlebih dahulu file yang ingin diurutkan. dimana direktori file akan berbeda - beda berdasarkan konfigurasi algoritma.
+                                            untuk konfigurasi sequential merge sort file terdapat pada folder "outputfile/Sequential MergeSort", untuk konfigurasi parallel merge sort file terdapat pada folder "outputfile/Parallel MergeSort", untuk konfigurasi 
+                                            distributed merge sort file terdapat pada folder "outputfile/Distributed MergeSort". Pada umumnya pengguna tidak perlu khawatir tentang direktori file hasil pengurutan karena akan dibuka otomatis saat menekan tombol ini.
+                                            Hal yang harus pengguna perhatikan adalah file yang ingin dibuka, sebab nama file bisa duplikasi dan apabila ada nama file sumber dan konfigurasi parameter yang sama akan ditambah increment. Format file hasil pengurutan adalah : 
+                                            "&lt;nama file sumber &gt; &lt;ukuran array&gt; &lt;parameter&gt;", sementara apabila terdapat  duplikasi nama file maka sesi baru akan membentuk file baru dengan increment berformat : "&lt;nama file sumber &gt; &lt;ukuran array&gt; &lt;parameter&gt; (&lt;increment&gt;)".
+                                            hasil pengurutan adalah file yang memiliki nama sama dengan file input. File terpilih akan otomatis dibuka menggunakan aplikasi text editor bawaan sistem operasi pengguna.
+                                            Gambar diatas menunjukkan fungsi tombol "Buka Hasil Sort".
+                                        </p>
+                                    </li>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="autosave error.PNG" alt="error auto save"/>
+                                    </center>
+                                    <li>
+                                        <p>
+                                            Tombol "Buka Log" berfungsi untuk membuka file rekaman riwayat log pada folder "Log Client (autosave)". File yang dicari adalah file bernama "autosave.txt",
+                                            apabila terdapat duplikasi maka aplikasi akan membuat file baru setiap sesi aplikasi secara increment, jadi format file menjadi "autosave(&lt;increment&gt;).txt".
+                                            umumnya pengguna tidak perlu mengkhawatirkan penamaan file. Sebab ketika pengguna menekan tombol ini file akan otomatis dibuka pada aplikasi text editor sistem operasi pengguna
+                                            tanpa pengguna harus memilih file lagi. Tombol ini hanya akan berfungsi jika pengguna sudah pernah mencentang checkbox "Auto Save Log" pada sesi yang sama, jika tidak akan muncul 
+                                            error seperti gambar diatas. Adapun konsep "Auto Save Log" adalah menyimpan riwayat proses hanya pada saat ketika checkbox sudah dicentang.
+                                            Apabila checkbox dicentang sesudah proses tertentu maka proses sebelumnya tidak akan direkam kedalam file. Gambar Berikut mendemonstrasikan fungsi dari checkbox "Auto Save Log".
+                                        </p>
+                                    </li>
+                                    <center>
+                                        <img src="autosave.png" alt="tampilkan auto save" style="width : 100%"/>
+                                    </center>
+                                    <p>
+                                        Dapat dilihat dari gambar diatas bahwa perekaman riwayat proses hanya dimulai ketika centang sudah dibuat sebelum proses dimulai.
+                                    </p>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="restart.png" alt="tampilkan restart" style="width: 100%;"/>
+                                    </center>
+                                    <li>
+                                        <p>
+                                            Tombol "Restart" berfungsi untuk mereset tampilan kembali ke tahap awal. Gambar diatas mendemonstrasikan fungsi tombol restart.
+                                        </p>
+                                    </li>
+                                </div>
+                            </ol>
+                        </div>
+                    </ol>
+                </div>
+            </ul>
+        </div>
+        <cite>
+            Catatan : 
+            <ol>
+                <li>
+                    Sebaiknya dalam satu host (komputer) hanya membuka satu aplikasi client, karena akan menyebabkan interferensi listening socket kedua aplikasi client yang dibuka bersamaan.   
+                </li>
+                <li>
+                    Apabila tampilan tidak responsif, aplikasi harus dimatikan paksa secara manual (bisa lewat cmd) atau process manager.
+                </li>
+                <li>
+                    Ketika menekan tombol start apabila tombol masih kelap - kelip RGB atau progress bar belum muncul, berarti proses masih belum dimuulai dan pengguna harus menekan tombol start lagi untuk memulai proses.
+                </li>
+                <li>
+                    Sebaiknya dalam satu host (komputer) hanya membuka satu aplikasi client atau server, tidak boleh kedua aplikasi dibuka bersamaan kecuali untuk "testing". Apabila
+                    kedua aplikasi dibuka bersamaan maka host server pada komputer lain akan sulit dikendalikan sebab sistem dapat mengambil network interface yang salah (localhost) yang menyebabkan
+                    loopback calling dan mengabaikan packet dari host pada komputer lain.
+                </li>
+            </ol>
+        </cite>
+    </body>
+</html>

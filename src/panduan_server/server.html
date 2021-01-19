@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <style>
+            p {
+                text-align: justify;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Modul server adalah bagian dari sistem yang berperan untuk menjalankan sebagian proses eksekusi yang dibagikan 
+            oleh aplikasi modul client. menu yang dapat dinavigasikan oleh pengguna adalah tombol bantuan (1), tombol pindai / SCAN(3), tombol Tampil(2), radio button no log(12),
+            radio button normal log(13), radio button debug log(14) dan checkbox auto save log(15). Semua navigasi yang disebutkan dapat dilihat berdasarkan gambar berikut.
+        </p>
+        <div>
+            <center>
+                <img src="tampilan_server.png" alt="tampilan server"> 
+            </center>
+            <p>Petunjuk : </p>
+            <ol>
+                <li>Button untuk menampilkan halaman bantuan.</li>
+                <li>Button untuk menampilkan dialog berisi daftar client terdeteksi.</li>
+                <li>Button untuk memindai client pada LAN.</li>
+                <li>TextField untuk menampilkan jumlah client yang terdeteksi aplikasi, bersifat read only.</li>
+                <li>TextField untuk menampilkan konfigurasi parameter prosesor yang terpakai oleh proses server, bersifat read only.</li>
+                <li>TextField untuk menampilkan konfigurasi parameter IP yang dapat dideteksi oleh client, bersifat read only.</li>
+                <li>Label untuk menampilkan teks judul halaman.</li>
+                <li>Label untuk menampilkan teks jumlah client terdeteksi.</li>
+                <li>Label untuk menampilkan teks jumlah prosesor server yang terpakai.</li>
+                <li>Label untuk menampilkan teks IP yang dapat dideteksi oleh client.</li>
+                <li>Label untuk menampilkan teks konfigurasi riwayat proses server.</li>
+                <li>RadioButton no log , sebagai pilihan konfigurasi bagi pengguna untuk tidak melacak riwayat proses.</li>
+                <li>RadioButton normal log, sebagai pilihan konfigurasi bagi pengguna untuk melacak riwayat proses.</li>
+                <li>RadioButton debug log, sebagai pilihan konfigurasi bagi pengguna untuk melacak riwayat proses dengan data bilangan yang diproses.</li>
+                <li>CheckBox untuk menyimpan riwayat proses kedalam bentuk file berdasarkan radiobutton terpilih.</li>
+                <li>TextArea untuk memunculkan riwayat proses sistem sesuai konfigurasi radioButton terpilih.</li>
+            </ol>
+        </div>     
+        <div>
+            <center>
+                <img src="navigasi.png" alt="navigasi">
+            </center>
+            <p>Pembahasan navigasi akan dibahas menjadi 4 bagian sesuai dengan gambar diatas, berikut adalah pembahasannya :  </p>
+            <ul>
+                <div>
+                    <center>
+                        <img src="panduan.png" alt="panduan">
+                    </center>
+                    <li><p>Menekan ikon tanda tanya (?) berdasarkan gambar dengan tanda merah diatas, berfungsi untuk menampilkan panduan ini, yang mana ketika modul ditutup panduan ini akan otomatis ditutup juga.</p></li>
+                </div>
+                <div>
+                    <center>
+                        <img src="scan_client.png" alt="scan">
+                    </center>
+                    <li>
+                        <p>
+                        Menekan tombol "SCAN" sesuai gambar diatas akan menjalankan proses latar belakang pemindaian untuk mendeteksi client sudah aktif yang tersedia pada LAN jaringan.
+                        perubahan dikenali dengan adanya perubahan jumlah nilai textfield "Client Terdeteksi" yakni bertambah atau berkurang atau bahkan tidak ada (0). Ketika proses pemindaian
+                        maka teks tombol akan berubah menjadi "CANCEL", sementara apabila proses pemindaian sudah selesai maka teks akan berubah kembali menjadi "SCAN". seperti nama teksnya "CANCEL" / batal
+                        pengguna dapat membatalkan proses latar belakang pemindaian secara paksa ketika tombol masih dalam teks "CANCEL" apabila terjadi kendala jaringan dan kendala lainnya.
+                        </p>
+                        <p> Adapun selain pemindaian sederhana untuk menguji client yang masih aktif pada LAN. Terdapat fitur tersembunyi yang akan muncul jika men-double-klik kotak textfield seperti 
+                            gambar dibawah ini. Tombol "LISTEN" yang muncul berfungsi mirip seperti tombol pindai, hanya saja selain menguji client aktif proses ini juga berfungsi untuk memberi sinyal
+                            bagi aplikasi client baru aktif bahwa terdapat modul server yang sudah aktif dan menunggu untuk menerima client tambahan sehingga aplikasi client dapat membuka tampilan utamanya.
+                        </p>
+                        <center>
+                            <img src="listen_client.png" alt="listen">
+                        </center>
+                    </li>
+                </div>
+                <br/>
+                <br/>
+                <div>
+                    <center>
+                        <img src="tampil_client.png" alt="tampil_client"/>
+                    </center>
+                    <li>
+                        <p>
+                            Untuk menampilkan lebih detail daripada hanya pemindaian sederhana yang merubah data jumlah client terdeteksi, maka penulis aplikasi memberikan menu dialog khusus
+                            untuk menampilkan alamat IP client yang berhasil dideteksi oleh proses pemindaian pada LAN. Gambar diatas menunjukkan tampilan dialog tersebut.
+                        </p>                        
+                    </li>
+                </div>
+                <div>
+                    <li>
+                        <p>
+                            Adapun dalam proses yang berjalan agar pengguna dapat mengetahui detail jalannya proses dan penulis dapat melakukan debugging apabila terjadi kesalahan hasil, maka 
+                            penulis aplikasi menyediakan fitur untuk menampilkan secara realtime proses dalam bentuk tampilan text dalam komponen text area. Berikut adalah 3 jenis bentuk konfigurasi 
+                            menampilkan riwayat proses.
+                            <ol>
+                                <div>
+                                    <center>
+                                        <img src="server_no_log.png" alt="no log">
+                                    </center>
+                                    <li>
+                                        Pilihan Radio Button "No Log", sesuai gambar diatas tidak melakukan apapun, penulis aplikasi membuat opsi ini untuk kebutuhan pengujian penelitian sebab untuk
+                                        menampilkan riwayat dibutuhkan proses I/O yang memakan banyak waktu yang bukan merupakan bagian dari algoritma yang diimplementasi sehingga perhitungan waktu proses
+                                        algoritma menjadi tidak akurat sebab waktu proses I/O menampilkan riwayat ikut terhitung pada "Elapsed Time".
+                                    </li>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="server_normal_log.png" alt="normal log">
+                                    </center>
+                                    <li>
+                                        Pilihan Radio Button "Normal Log", sesuai gambar diatas menampilkan riwayat titik berhenti proses, seperti titik mulai pembagian array
+                                        , titik pengiriman array ke host mana saja, titik menerima array yang sudah terurut dari hasil pengurutan host yang dikirim sebelumnya,
+                                        dan titik array selesai diurutkan dan digabungkan pada client serta waktu proses yang terekam.
+                                    </li>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="server_debug_log.png" alt="debug log">
+                                    </center>
+                                    <li>
+                                        Pilihan Radio Button "Debug Log" berfungsi sama seperti "Normal Log", hanya memiliki tambahan menampilkan array, yaitu array yang akan diproses,
+                                        array mana saja yang dikirim ke host, array yang diterima dari host dan array hasil pengurutan akhir. Tujuan menampilkan array adalah untuk memberikan
+                                        pengetahuan kepada penulis keabsahan proses dalam proses debugging ataupun kepada pengguna sebagai garis besar proses.
+                                    </li>
+                                </div>
+                                <p>
+                                    Adapun checkbox "Auto Save Log" berfungsi untuk menyimpan teks log kedalam file yang dimulai dari saat checkbox tercentang
+                                    sebelum proses dimulai dan berdasarkan jenis konfigurasi radio button yang terpilih. Gambar berikut merupakan contoh penyimpanan riwayat proses, 
+                                    agar memperjelas konsep "Auto Save Log", contoh dibawah dilanjutkan dari proses sebelumnya yang tidak mencentang checkbox "Auto Save Log".
+                                </p>
+                                <center>
+                                    <img src="contoh_autosave.png" alt="contoh1">
+                                </center>
+                                <p>
+                                    Berikut adalah gambar file "autosave.txt" yang tersimpan dalam folder "Log Server (autosave)", gambar ini menunjukkan
+                                    bahwa hanya riwayat proses setelah pencentangan checkbox "Auto Save Log" saja yang akan direkam dan tersimpan kedalam file.
+                                </p>
+                                <center>
+                                    <img src="contoh_file_autosave.png" alt="contoh2"/>
+                                </center>
+                                <cite>
+                                    Catatan : apabila terdapat file "autosave.txt" baru dari sesi aplikasi berbeda. Maka nama file akan diincrement menjadi "autosave(1).txt" ,dst.
+                                </cite>
+                            </ol>
+                        </p>
+                    </li>
+                </div>
+            </ul>
+        </div>   
+        <cite>
+            <p>Catatan : </p>
+            <ol>
+                <li>
+                    Pada satu komputer hanya boleh membuka satu aplikasi server, tidak boleh lebih sebab server menggunakan fixed port 1099 untuk java RMI.
+                </li>
+                <li>
+                    Sebaiknya dalam satu host (komputer) hanya membuka satu aplikasi client atau server, tidak boleh kedua aplikasi dibuka bersamaan kecuali untuk "testing". Apabila
+                    kedua aplikasi dibuka bersamaan maka host server pada komputer lain akan sulit dikendalikan sebab sistem dapat mengambil network interface yang salah (localhost) yang menyebabkan
+                    loopback calling dan mengabaikan packet dari host pada komputer lain.
+                </li>
+            </ol>
+        </cite>
+    </body>
+</html>

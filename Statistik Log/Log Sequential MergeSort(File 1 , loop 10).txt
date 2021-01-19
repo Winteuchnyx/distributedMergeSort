@@ -1,0 +1,12 @@
+sampel.txt "SEQUENTIAL MERGESORT" Size: 20
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+

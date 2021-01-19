@@ -1,0 +1,50 @@
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 901,000000 ms
+
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 9,000000 ms
+
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 16,000000 ms
+
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 8,000000 ms
+
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 11,000000 ms
+
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 11,000000 ms
+
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 17,000000 ms
+
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 11,000000 ms
+
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 26,000000 ms
+
+Memulai pembagian Array
+Mengirim array ke host : 192.168.56.1
+Proses Selesai.
+Elapsed Time : 14,000000 ms
+

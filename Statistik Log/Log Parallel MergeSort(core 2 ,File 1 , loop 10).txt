@@ -1,0 +1,12 @@
+sampel.txt "PARALLEL MERGESORT" Size: 20 CORE : 2
+13.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+

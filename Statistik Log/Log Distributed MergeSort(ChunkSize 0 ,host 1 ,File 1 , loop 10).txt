@@ -1,0 +1,12 @@
+sampel.txt "DISTRIBUTED MERGESORT" Size: 20 host : 1
+901.0
+9.0
+16.0
+8.0
+11.0
+11.0
+17.0
+11.0
+26.0
+14.0
+

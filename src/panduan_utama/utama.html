@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <style>
+            img {
+                display : block;
+                width: 50%;
+            }
+            p{
+                text-align : justify;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>Tampilan ini berfungsi untuk memilih peran komputer sebagai host, menu yang dapat dinavigasikan oleh pengguna adalah tombol aktivasi modul client (7), tombol aktivasi modul server(8),
+                tombol bantuan (1), logo universitas (3) dan label status (6). yang ditunjukkan sesuai pada gambar berikut. 
+            </p>            
+        </div>
+        <div width = 100%;>
+            <center>                
+                <img src="tampilan_utama.png"/>
+            </center>
+            <p>petunjuk : </p>
+            <ol>
+                <li>Button menampilkan halaman bantuan.</li>
+                <li>Label untuk menampilkan teks judul skripsi.</li>
+                <li>Label logo universitas, dapat di double-klik untuk menampilkan petunjuk readme.txt.</li>
+                <li>Label untuk menampilkan teks nama penulis skripsi.</li>
+                <li>Label untuk menampilkan teks asal fakultas dan program studi penulis.</li>
+                <li>Label untuk teks status petunjuk dan status proses aplikasi.</li>
+                <li>Button untuk memuat modul client.</li>
+                <li>Button untuk memuat modul server.</li>
+            </ol>
+        </div>
+        <div>
+            <center>
+                <img src = "navigasi.png" />
+            </center>
+            <p>Pembahasan penggunaan akan dilakukan menjadi 5 bagian sesuai dengan tanda merah yang ditunjukkan gambar diatas.</p>
+            <ul>
+                <div>
+                    <center>
+                        <img src="panduan.png"/>
+                    </center>                        
+                    <li><p>Menekan ikon tanda tanya (?) berdasarkan gambar dengan tanda merah diatas, berfungsi untuk menampilkan panduan ini, yang mana ketika modul berhasil dimuat panduan ini akan otomatis ditutup.</p></li>
+                </div>                    
+                <div>
+                    <center>
+                        <img src = "readme.png">
+                    </center>                    
+                    <li>
+                        <p>Logo universitas (gambar diatas) yang dapat di double klik untuk menampilkan dokumentasi teoritis tertulis dalam bentuk .txt yang akan ditampilkan 
+                            menggunakan text editor bawaan sistem operasi. <cite>aksi ini merupakan salah satu fitur tersembunyi yang disediakan oleh pembuat aplikasi.</cite>
+                        </p>
+                    </li>
+                </div>
+                <div>
+                    <center>
+                        <img src="status.png">
+                    </center> 
+                    <li>
+                        <p>Label status yang berisi teks : "pilih komputer Host ini sebagai Client atau Server :", apabila di double - klik akan menampilkan kotak dialog
+                            konfigurasi manual pendeteksian modul client dan server. seperti pada gambar berikut.
+                        </p>
+                    </li>             
+                    <center>
+                        <img src="first_hidden.png">
+                    </center>                        
+                    <p>petunjuk : </p>
+                    <ol>
+                        <li>Label untuk menampilkan teks judul dialog “Hidden Utility for Advance User”.</li>
+                        <li>Label untuk menampilkan teks konfigurasi jumlah prosesor “Default Core”.</li>
+                        <li>TextField untuk mengisi konfigurasi jumlah prosesor bawaan bagi modul client dan modul server.</li>
+                        <li>Label untuk menampilkan teks konfigurasi hostname server “Default Hostname”.</li>
+                        <li>TextField untuk mengisi konfigurasi hostname server manual oleh pengguna.</li>
+                        <li>Label untuk menampilkan teks konfigurasi IP broadcast client “Default NetworkAddress”.</li>
+                        <li>TextField untuk mengisi IP broadcast client manual oleh pengguna.</li>
+                        <li>Button untuk menerima perubahan konfigurasi.</li>
+                    </ol>
+                    <p>Kotak dialog utilitas beranda "First Hidden Utility" berfungsi sebagai kendali darurat apabila client dan server gagal berkomunikasi. Dalam suatu 
+                        host terdapat lebih dari satu network interface yang mewakili masing - masing NIC hardware, agar aplikasi dapat mendeteksi jaringan LAN mana yang 
+                        digunakan dalam penelitian ini maka harus dilakukan pemindaian satu persatu pada masing-masing interface dengan acuan network interface yang mendapat
+                        respon paling banyak dari komunikasi client - server yang akan dipakai dalam penelitian. Adapun pada suatu ketika terdapat kendala jaringan seperti tingginya
+                        traffic yang menyebabkan seringnya terjadi paket lost, karena protokol pemindaian yang digunakan adalah UDP maka tidak ada mekanisme pemulihan implisit
+                        yang menjamin bahwa paket akan sampai ke host lain yang berperan sebagai server. Selain itu, dalam aplikasi server dibutuhkan pengetahuan alamat masing-masing host berdasarkan konfigurasi
+                        alamat pada network interface yang digunakan client untuk berkomunikasi dalam mencapai kesepakatan karena pada praktik nyatanya suatu host dapat terhubung pada jaringan LAN yang sama melalui lebih dari 
+                        satu network interface dan pada sisi jaringan komputer dianggap host yang berbeda walaupun komputernya masih sama hanya interfacenya yang berbeda. Untuk mengatasi masalah duplikasi ini
+                        maka kotak dialog "First Hidden Utility" disediakan dan dimasukkan ke dalam panduan. Konfigurasi penting adalah "Default Hostname" dan "Default Network Address", yang mana secara otomatis NetworkAddress didapat 
+                        dari hasil pemindaian network interface dan default hostname didapat berdasarkan kesepakatan alamat IP yang dikenal client berdasarkan respon dari network address yang digunakan dari network interface yang dipilih.
+                        Sementara Default Core adalah konfigurasi prosesor sistem yang dipakai oleh seluruh host baik client maupun server yang diset saat kesepakatan berlangsung.
+                    </p>
+                </div>
+                <div>
+                    <center>
+                        <img src="client_message.png" />
+                    </center>                        
+                    <li>
+                        <p>Apabila ingin host berperan sebagai client maka tombol client yang ditekan (berdasarkan gambar diatas), teks pada label status akan segera berganti untuk memberikan informasi proses yang sedang dijalankan. yaitu mendeteksi jumlah network address yang tersedia, 
+                            mengirim pesan broadcast aplikasi server yang aktif pada masing-masing network interface, memilih network interface, mengkonfigurasi server dan memulai tampilan modul client. Gambar diatas merupakan proses mendeteksi
+                            jumlah network interface yang tersedia pada host dengan tujuan mendapatkan network address untuk broadcast pada network interface dengan host server paling banyak. apabila tidak  terdapat host server pada seluruh 
+                            network address pada masing - masing network interface, maka proses scanning akan terus berulang sampai terdeteksi host server pada salah satu network interface, sesuai gambar diatas. 
+                        </p>
+                    </li>                    
+                    <center>
+                        <img src="client_message2.png"/>
+                    </center>                        
+                    <p>
+                        Ketika aplikasi mendeteksi adanya host yang mengaktifkan modul server maka status pesan akan berubah dan keluar dari perulangan pendeteksian sesuai gambar diatas, setelah itu aplikasi akan 
+                        menampilkan modul client sesuai gambar dibawah ini.
+                    </p>
+                    <center>
+                        <div>
+                            <img src="client_utama.JPG"/>
+                            <p style="text-align:center">Tampilan Dasar Modul Client</p>
+                        </div>
+                    </center>                        
+                </div>
+                <div>
+                    <center>
+                        <img src="server_message.png"/>
+                    </center>
+                    <li>
+                        <p>
+                            Apabila  ingin host berperan sebagai server maka tombol server ditekan, aplikasi akan segera dalam mode menunggu dan mendengarkan pesan dari aplikasi client (sesuai gambar diatas), apabila terdeteksi pesan pemindaian dari client maka pesan status akan segera berubah
+                            untuk memberi informasi aplikasi sedang merespon pesan client dengan balasan khusus yang ditunjukkan oleh gambar dibawah ini. 
+                        </p>
+                    </li>                   
+                    <center>
+                        <img src="server_message2.png"/>
+                    </center>                        
+                    <p>Selanjutnya apabila client telah mengirim pesan kesepakatan konfigurasi alamat IP dan jumlah prosesor, modul akan segera mengaktifkan java RMI sesuai gambar dibawah ini.</p>
+                    <center>
+                        <img src="server_message3.png"/>
+                    </center>                        
+                    <p>Ketika server telah menerima pesan acknowledge dari client, maka modul utama aplikasi server akan segera dimuat sesuai gambar berikut.</p>
+                    <center>
+                        <div>
+                            <img src="server_utama.JPG"/>
+                            <p style = "text-align : center">Tampilan Dasar Modul Server</p>
+                        </div>
+                    </center>                        
+                </div>
+            </ul>
+            <cite>Catatan : Pada satu host (komputer) hanya boleh menjalankan satu aplikasi modul server, namun dapat menjalankan banyak modul client. Dalam memulai sistem
+                semua host yang ingin dijadikan server harus dijalankan terlebih dahulu sebelum menjalankan aplikasi client agar semua modul sistem 
+                dapat terdeteksi secara otomatis. Apabila sebaliknya maka aplikasi modul client hanya akan mendeteksi beberapa aplikasi modul server minimal 
+                lebih besar atau sama dengan satu. Sehingga pengguna harus melakukan scan ulang dengan menekan tombol pindai ulang yang tersedia pada menu 
+                aplikasi modul client atau aplikasi modul server agar modul yang baru dibuka dapat dideteksi oleh modul client yang baru dibuka atau modul server yang sudah terbuka.
+            </cite>
+        </div>
+    </body>
+</html>
